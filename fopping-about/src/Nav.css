@@ -1,0 +1,105 @@
+
+:root {
+    --nav-color: hsla(203, 59%, 14%, 1);
+    --nav-color-secondary: rgb(36, 97, 134);
+    --hover-color: #ddd;
+    --w3-schools-hover-color: #3e8e41;
+}
+
+.nav {
+    background-color:  var(--nav-color);
+    padding-top: 1px;
+    padding-bottom: 1px;
+    /**
+        padding: 12px 0px;
+    */
+}
+
+.nav ul {
+    
+    list-style-type: none;
+    align-self: right;
+}
+.nav ul > li {
+    color: white;
+    display: inline-block;
+}
+
+.nav__link {
+    color: white;
+    text-decoration: none;
+    padding: 17px 16px;
+    background-color:var(--nav-color);
+}
+/*
+.nav__link:not(first) {
+    padding-left: 20px;
+}*/
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:var(--nav-color-secondary);
+    min-width: 100px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-top: 17px;
+}
+
+.dropdown-content a {
+    color: white;
+    background-color:rgb(36, 97, 134);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: var(--hover-color);
+    color: black;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block; 
+}
+
+
+.dropdown:hover {
+    color:hsla(203, 59%, 14%, 1);
+}
+
+.nav__link:hover {
+    background-color: #3e8e41;;
+}
+
+
+.indent-me {text-indent: 15px;}
+.indent-me-2 {text-indent: 30px;}
+.indent-me-3 {text-indent: 45px;}
+.indent-me-4 {text-indent: 60px;}
+
+
+
+
+.dropdown2 {
+    position: relative;
+}
+
+.dropdown-content2 {
+    position: absolute;
+    display: none;
+}
+
+.dropdown2:hover .dropdown-content2 {
+    display: block;
+}
+
+.darkmode {
+    color: white;
+    background-color: black;
+}

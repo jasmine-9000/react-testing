@@ -1,0 +1,125 @@
+{
+  "todolist": [
+    {
+      "text": "Organize Bookmarks from Learn from Leon",
+      "day": "Tomorrow, 3/4/2022",
+      "reminder": true,
+      "id": 1
+    },
+    {
+      "text": "Clean my Room",
+      "day": "Today 3/4/2022",
+      "reminder": false,
+      "id": 2
+    },
+    {
+      "text": "Pick up leaves from garage",
+      "day": "2/27/2022",
+      "reminder": true,
+      "id": 3
+    },
+    {
+      "text": "Organize my iPhone tabs",
+      "day": "Today 2/27/2022",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "Order room organizing supplies",
+      "day": "Tomorrow 3/5/2022",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "text": "Chop up more boxes",
+      "day": "Every Sunday before 8:00pm",
+      "reminder": true,
+      "id": 10
+    },
+    {
+      "text": "Migrate open iPhone tabs to Desktop bookmarks",
+      "day": "Today, 3/4/2022",
+      "reminder": false,
+      "id": 11
+    },
+    {
+      "text": "Buy a power strip that has a recessed power switch",
+      "day": "Today, 3/6/2022",
+      "reminder": false,
+      "id": 12
+    },
+    {
+      "text": "Add feature that allows me to reorganize tasks in any order I wish",
+      "day": "Anytime before 3/11/2022",
+      "reminder": false,
+      "id": 13
+    },
+    {
+      "text": "Create a \"Go Bag\"",
+      "day": "Today 3/7/2022",
+      "reminder": false,
+      "id": 14
+    },
+    {
+      "text": "Add feature to Todo list that allows it to become persistent",
+      "day": "Today, 3/7/2022",
+      "reminder": false,
+      "id": 15
+    },
+    {
+      "text": "Add Feature to Todo list that allows me to track exactly when item was created vs what time it was due",
+      "day": "Today 3/7/2022",
+      "reminder": false,
+      "id": 16
+    },
+    {
+      "text": "Add error handling to \"todo.js\" loading functions",
+      "day": "Today, 3/10/2022",
+      "reminder": false,
+      "id": 17
+    },
+    {
+      "text": "Organize music",
+      "day": "Today, 3/10/2022",
+      "reminder": false,
+      "id": 18
+    }
+  ],
+  "completedtasks": [
+    {
+      "text": "Test me",
+      "day": "Right now 3/4/2022",
+      "reminder": false,
+      "datetime_completed": 1646417569874,
+      "id": 1
+    },
+    {
+      "text": "Do dishes ",
+      "day": "Today 3/4/2022",
+      "reminder": true,
+      "datetime_completed": 1646440926312,
+      "id": 2
+    },
+    {
+      "text": "Add comments to “todo.js”",
+      "day": "Today, 3/4/2022",
+      "reminder": false,
+      "datetime_completed": 1646587412642,
+      "id": 3
+    },
+    {
+      "text": "Order unmanaged network switch",
+      "day": "Today 3/4/2022",
+      "reminder": true,
+      "datetime_completed": 1646702146874,
+      "id": 4
+    },
+    {
+      "text": "Order stuff from Home Depot to fix hose",
+      "day": "Today 3/4/2022",
+      "reminder": false,
+      "datetime_completed": 1646702166900,
+      "id": 5
+    }
+  ]
+}

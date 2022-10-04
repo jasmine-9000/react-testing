@@ -1,0 +1,181 @@
+@import '../mixins/mediaqueries.scss';
+
+@function strip-units($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pixels) {
+    // we needed interpolation to append a simple rem at the end.
+    @return #{strip-units($pixels)/16}rem;
+}
+/* only display first child so I can work on it better */
+
+.completed-task-grid .completed-task:not(:nth-child(5)) {
+    display: none;
+}
+
+:root {
+    --font-color-primary: rgb(4, 3, 17);
+    --font-color-secondary: rgb(48, 88, 29);
+    --font-color-third: rgb(66, 19, 10);
+    --background-color-primary: rgb(106, 169, 241);
+    --background-color-secondary: rgb(58, 194, 58);
+    --background-color-third: rgb(241, 73, 43);
+    --border-radius: 5px;
+    --large-font-size: 24pt;
+    --medium-font-size: 12pt;
+    --small-font-size: 12pt;
+}
+
+/* *****************************************************
+    How the completed tasks are displayed:
+****************************************************** */
+.completed-task-grid {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(8px);
+}
+
+/* ******************************************
+    Individual components of Completed Tasks
+**************************************** */ 
+
+.completed-task {
+    display: flex;
+    flex-direction: column;
+    /*
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+        "A C"
+        "B C";
+    */
+    border: 1px solid var(--font-color-primary);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-primary);
+    color: var(--font-color-primary);
+    margin: 0px 12px;
+    
+    width: rem(375px);
+    @include breakpoint-up(medium) {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: 
+        "A A"
+        "B C";
+        width: 700px;
+    }
+}
+
+.completed-task-name {
+    /* has a hanging indent. */
+    $indent-size: 10px;
+    text-indent: -$indent-size;
+    padding-left: #{$indent-size + 8px};
+    padding-right: 8px; /* just in case the task name is too long, it will word wrap.  */
+
+    // mobile-specific styles
+    width: rem(375px);
+    margin-bottom: rem(4px);
+    word-wrap: break-word;
+    grid-area: A;
+    @include breakpoint-up(medium) {
+        width: 100%;
+    }
+}
+.completed-task-day-container {
+    color: var(--font-color-third);
+    word-wrap: break-word;
+    font-size: var(--medium-font-size);
+    background-color: var(--background-color-third);
+    grid-area: B;
+    /**
+        background-color: pink;
+    */
+    align-self: center;
+    
+    padding-left: 8px;
+    /*
+    margin-bottom: 8px;
+    margin-left: 8px;
+    */
+    border-radius: var(--border-radius);
+    width: rem(350px);
+    @include breakpoint-up(medium) {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+.completed-task-day {
+    font-weight: bold;
+}
+.completed-task-day::before {
+    content: "\A";
+    white-space: pre;
+}
+
+.completed-task-datecompleted-container {
+    color: var(--font-color-secondary);
+    background-color: var(--background-color-secondary);
+    
+    padding-left: 8px;
+    padding-right: 8px;
+    /*
+    margin-bottom: 5px;
+    margin-right: 5px;
+    */
+    margin-bottom: rem(5px);
+    border-radius: var(--border-radius);
+    font-size: var(--small-font-size);
+    grid-area: C;
+    align-self: center;
+    min-height: 3ch;
+
+    width: rem(350px);
+    @include breakpoint-down(small) {
+        width: rem(350px);
+        /*
+        margin-right: rem(5px);
+        margin-left: rem(5px)
+        */
+    }
+    @include breakpoint-up(medium) {
+        width:100%;
+    }
+
+
+    word-wrap: break-word;
+    
+}
+
+
+.completed-task-datecompleted {
+    font-weight: bold;
+}
+
+.completed-task-datecompleted::before {
+    content: "\A";
+    white-space: pre;
+}
+
+
+/*  ********************
+NOTES: 
+    from Team Gantt: https://www.teamgantt.com/blog/color-theory-productivity#:~:text=Tasks%20colored%20%22Pretty%20Pink%22%20are%20most%20likely%20to,colors%20are%3A%20%22Prolific%20Purple%22%20%22Gainful%20Green%22%20%22Great%20Green%22
+    --basic-blue: blue;
+    --beneficial-brown: brown;
+    --magnifying-magenta: magenta;
+    --prolific-purple: purple;
+    --gainful-green: green;
+    --outstanding-orange: orange;
+    --pretty-pink: pink;
+    
+
+    
+    Random shades of green I cound:
+        --chateau-green: #48A860;
+        --
+    
+    ************************    */

@@ -1,0 +1,133 @@
+@import '../mixins/mediaqueries.scss';
+
+
+// only display first child so I can work on it better
+@function strip-units($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pixels) {
+    // we needed interpolation to append a simple rem at the end.
+    @return #{strip-units($pixels)/16}rem;
+}
+
+// .completed-task-grid .completed-task:not(:nth-child(5)) { display: none; }
+.completed-task-grid .completed-task:nth-child(7){ display:none;}
+.completed-task-grid {
+    @include breakpoint-down(medium) {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: rem(18px);
+        padding-bottom: 100px;
+    }
+}
+
+.completed-task {
+    // border: 1px solid magenta; 
+    //display: flex;
+    //flex-direction: row;
+    //flex-basis: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "A B C";
+    column-gap: 0;
+    @include breakpoint-down(medium) {
+        grid-template-columns: 1fr;
+        // grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "A"
+                             "B"
+                             "C";
+        row-gap: 3px;
+        margin: 0px rem(12px);
+        padding: rem(8px);
+        border: 1px solid black;
+        box-shadow: 6px 6px 12px rgba(0,0,0,0.5);
+    }
+    // border: 1px solid magenta;
+}
+
+.completed-task-name {
+    border-bottom: 1px solid black;
+   //text-decoration: underline;
+   // width: 465px;
+   grid-area: A;
+   @include breakpoint-down(medium) {
+       border: none;
+   }
+}
+
+
+.completed-task-day-container {
+    border-bottom: 1px solid black;
+  //  border: 1px solid green;
+   grid-area: B;
+   @include breakpoint-down(medium) {
+       border: none;
+   }
+}
+
+.completed-task-datecompleted-container {
+    border-bottom: 1px solid black;
+    //display: none;
+    grid-area: C;
+    @include breakpoint-down(medium) {
+        border: none;
+    }
+}
+
+// Completed tasks headers
+.completed-task-header {
+    background-color: #2f5789;
+    color: #f2f2ec;
+    font-weight: 700;
+    //display: flex;
+    //flex-wrap: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "A B C";
+    column-gap: 0;
+    @include breakpoint-down(medium) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "A"
+                             "B"
+                             "C";
+        padding: 12px 0px;
+    }
+}
+
+.completed-task-name-header,
+.completed-task-day-header,
+.completed-task-datecompleted-header {
+    margin: 0rem rem(12px);
+}
+
+.completed-task-name,
+.completed-task-day-container,
+.completed-task-datecompleted-container {
+    margin: 0rem rem(12px);
+    word-wrap: break-word;
+    // word-break:break-all;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+    max-width: 475px;
+    align-self: end;
+    @include breakpoint-down(medium) {
+        margin: 0;
+    }
+}
+
+.completed-task-name-header, .completed-task-name {
+ //   flex-grow: 2;
+ grid-area: A;
+}
+
+.completed-task-day-header, .completed-task-day-container {
+   // flex-grow: 2;
+   grid-area: B;
+}
+.completed-task-datecompleted-header, .completed-task-datecompleted-container {
+    //flex-grow: 1;
+    grid-area: C;
+}
+
